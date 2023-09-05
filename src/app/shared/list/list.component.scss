@@ -1,0 +1,68 @@
+.list {
+  width: 70%;
+  margin-top: 20px;
+
+  h1 {
+    margin-bottom: 10px;
+  }
+
+  ul {
+    list-style: none;
+    font-size: 1.3em;
+    align-items: flex-start;
+  }
+
+  &__add {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 20px;
+
+    label {
+      margin-right: 5px;
+      font-size: 1.3em;
+    }
+
+    input {
+      width: 400px;
+      height: 22px;
+      padding: 3px;
+      border-radius: 10px;
+    }
+
+    &-icon {
+      color: rgb(26, 153, 47);
+      cursor: pointer;
+    }
+  }
+
+  &__title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+
+
+    &-icon-not-done {
+      color: rgb(26, 153, 47);
+      cursor: pointer;
+    }
+
+    &-icon-trash {
+      color: rgb(231, 29, 29);
+      cursor: pointer;
+      margin-left: 3px;
+    }
+
+    .done {
+      color: rgb(163, 159, 159);
+    }
+  }
+}
+
+
+

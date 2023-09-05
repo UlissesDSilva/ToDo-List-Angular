@@ -1,0 +1,32 @@
+<div class="list">
+  <h1 class="list__title">Tarefas</h1>
+  <hr>
+  <ul *ngFor="let task of tasks; let i = index">
+    <li>
+      <div class="list__item" *ngIf="showList; else noList">
+        <p [ngClass]="{'done': task.done}">{{task.name}}</p>
+        <div>
+          <mat-icon
+            color="primary"
+            class="list__item-icon-not-done"
+            (click)="markAsDone(task.name, task.id)"
+            *ngIf="!task.done">
+            done
+          </mat-icon>
+          <mat-icon color="primary" class="list__item-icon-trash" (click)="removeTask(task.id)">restore_from_trash</mat-icon>
+        </div>
+      </div>
+      <ng-template #noList>
+        <div>
+          <h2>Teste</h2>
+        </div>
+      </ng-template>
+    </li>
+  </ul>
+  <hr>
+  <div class="list__add">
+    <label for="addTodo">Adicione uma tarefa: </label>
+    <input type="text" id="addTodo" [(ngModel)]="task.name">
+    <mat-icon color="primary" class="list__add-icon" (click)="addTask()">add_circle</mat-icon>
+  </div>
+</div>
